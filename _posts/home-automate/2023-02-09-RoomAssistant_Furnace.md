@@ -9,10 +9,10 @@ categories:
   - roomAssistant
 excerpt_separator: "<!--more-->"
 #layout: single
-#header:
-#  image: "/assets/images/roomassistant/room-assistant-header.png"
-#  #caption: "Room Assistant on raspberry Pi Model B v1"
-#  teaser: "https://www.room-assistant.io/room-assistant.png"
+header:
+  overlay_image: "/assets/images/roomassistant/raspi-header.png"
+  #caption: "Room Assistant on raspberry Pi Model B v1"
+  teaser: "/assets/images/roomassistant/raspi-header-thumb.png"
 #image:
 #  feature: "/assets/images/roomassistant/room-assistant-header.png"
 #  thumb: "/assets/images/roomassistant/room-assistant250.png" #keep it square 200x200 px is good
@@ -43,7 +43,7 @@ Raspi model B used as a room controller and extension of the home assistant inst
 
 The furnace controller is one of my favorite and most used integrations so far.
 
-![furnace device wiring](/assets/images/roomassistant/furnace/FurnaceRaspi.png)
+![furnace device wiring](/assets/images/roomassistant/FurnaceRaspi.png)
 
 Not too difficult or complex, though when combined with multiple temperature sensors around the house the functionality is unmatched. Using some old hardware and a few relays, I have an smart furnace and energy savings!
 
