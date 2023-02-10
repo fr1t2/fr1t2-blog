@@ -9,12 +9,12 @@ categories:
   - roomAssistant
 #layout: single
 header:
-  overlay_image: "/assets/images/roomassistant/room-assistant-header.png"
+  overlay_image: "/assets/images/room-assistant-header.png"
   #caption: "Room Assistant on raspberry Pi Model B v1"
   teaser: "https://www.room-assistant.io/room-assistant.png"
 image:
-  feature: "/assets/images/roomassistant/room-assistant-header.png"
-  thumb: "/assets/images/roomassistant/room-assistant250.png" #keep it square 200x200 px is good
+  feature: "/assets/images/room-assistant-header.png"
+  thumb: "/assets/images/room-assistant250.png" #keep it square 200x200 px is good
 tags:
   - Homeassistant
   - hass
@@ -68,7 +68,7 @@ feature_row:
 ---
 
 
-![](/assets/images/roomassistant/room-assistant250.png ){: .align-left} 
+![](/assets/images/room-assistant250.png ){: .align-left} 
 Home automation devices built on the [Room assistant platform](https://www.room-assistant.io/), communicating with Home Assistant through MQTT, 
 using [Raspberry Pi single board computers](https://www.raspberrypi.com/)
 <!-- more -->
