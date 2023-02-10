@@ -1,0 +1,139 @@
+# ########################
+# Raspi Config
+#   Crawl Space
+#   Above furnace in crawl space 
+#   Monitor and control the furnace and crawl space
+#   10.0.0.74
+# ########################
+
+# ############
+# GPIO Pin-Out
+# ############
+# PIN: 4 AltFunction: | DHT11
+# PIN: 17 AltFunction: | heat
+# PIN: 22 AltFunction: | Fan
+# PIN: 23 AltFunction: | AC
+# PIN: 29 AltFunction: | reset
+
+# #######################
+# Global Config settings
+# #######################
+global:
+  instanceName: crawlspace
+  integrations:
+    - homeAssistant
+    - gpio
+    - shell
+
+# #######################
+# Cluster settings
+# #######################
+# Config options for clustering multiple Room-Assistant
+# Give leader more weight
+cluster:
+  weight: 1
+  networkInterface: eth0
+  port: 6425
+  timeout: 60
+  peerAddresses:
+    # raspi1 patio
+    - 10.10.10.70:6425
+    # raspi2 office
+    - 10.10.10.71:6425
+    # raspi3 sprinkler
+    - 10.0.0.71:6425
+    #raspi4 kitchen
+    - 192.168.1.75:6425 
+    # raspi5 crawlspace <-- this pc
+#    - 10.0.0.74:6425
+    # raspi6 garage
+    - 10.10.10.73:6425
+
+# #######################
+# home assistant settings
+# #######################
+homeAssistant:
+  mqttUrl: mqtt://10.10.10.21:1883
+  mqttOptions:
+    username: homeassistant
+    password: {LONG_RANDOM_STRING}
+
+# #######################
+# GPIO settings
+# #######################
+gpio:
+
+# #######################
+# Switches settings
+# #######################  
+  switches:
+
+    # Relay 1 - Fan Run
+    - name: Fan On
+      pin: 22
+      icon: mdi:fan
+
+    # Relay 2 - AC RUN
+    - name: Air Conditioning
+      pin: 23
+      icon: mdi:air-conditioner
+
+    # Relay 3 - HEAT RUN
+    - name: Heater
+      pin: 17
+      icon: mdi:fire
+
+    # HARD Reset PIN
+    - name: Crawl space reset
+      pin: 29
+      icon: mdi:power
+
+# #######################
+# Shell settings
+# #######################
+shell:
+  sensors:
+
+     # DHT11 Sensor reporting the temp °F result
+    - name: Crawl Space Temperature
+      command: 'python3.7 /home/pi/room-assistant/script/myDHT.py'
+      regex: '(-?[0-9.]+)F'
+      cron: '*/2 * * * *'
+      icon: mdi:temperature-fahrenheit
+      unitOfMeasurement: '°F'
+      deviceClass: temperature
+
+     # DHT11 Sensor reporting the humid % result
+    - name: Crawl Space Humidity
+      command: 'python3.7 /home/pi/room-assistant/script/myDHT.py'
+      regex: '(-?[0-9.]+)%'
+      cron: '*/5 * * * *'
+      icon: mdi:water-percent
+      unitOfMeasurement: '%'
+      deviceClass: humidity
+
+    # Script to check onboard temp sensor reading
+    - name: Crawl Space CPU Temp
+      command: '/home/pi/room-assistant/script/cpuTemp.sh'
+      cron: '*/2 * * * *'
+      unitOfMeasurement: F
+      deviceClass: temperature
+
+    # Script to check voltage and return boolean if no errors seen. 
+    # See the script for more
+    - name: Crawl CPU Voltage
+      command: '/home/pi/room-assistant/script/cpuVolt.sh'
+      cron: '1 */1 * * *'
+      deviceClass: power
+
+    # Report CPU uptime in sec
+    - name: Crawl CPU Up Time
+      command: '/home/pi/room-assistant/script/cpuUp.sh'
+      cron: '* * * * *'
+      unitOfMeasurement: 's'
+
+    # Free memory `free -h` results
+    - name: Crawl CPU Free Memory
+      command: '/home/pi/room-assistant/script/freeMem.sh'
+      cron: '*/10 * * * *'
+      unitOfMeasurement: 'MB'

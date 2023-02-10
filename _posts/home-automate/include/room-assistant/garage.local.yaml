@@ -1,0 +1,215 @@
+# ########################
+# Raspi Config
+#   hass-raspi6
+#   Garage Ceiling
+#   Garage control and monitoring
+#   10.10.10.73
+# ########################
+
+# ############
+# GPIO Pin-Out
+# ############
+#
+# Inputs:
+# Pin: {GPIO NUMBER} Use: {Pin function} ConnectPin: {DB9 PIN}
+# Pin: 04 Use: Garage door CLOSED position sensor (reed sw) ConnectPin: 1
+# Pin: 23 Use: Garage door partial OPEN position sensor (reed sw) ConnectPin: 2
+# Pin: 24 Use: Garage door OPEN position sensor (reed sw) ConnectPin: 3
+# Pin: 25 Use: Garage Back Door Sensor (reed sw) ConnectPin: 4 
+# Pin: 15 Use: Garage House Door Sensor (reed sw) ConnectPin: 5
+# Pin: 14 Use: Garage Motion Sensor (PIR) ConnectPin: 6
+#
+# Outputs:
+# Pin: 17 Use: Garage door control (relay 1)
+# Pin: 18 Use: Garage Fan Control (relay 2)
+# Pin: 22 Use: Garage CPU Case LED (blue)
+# Pin: 27  Use: humidity/temp DHT11 sensor using the shell functions below
+
+# #######################
+# Global Config settings
+# #######################
+global:
+  instanceName: garage
+  integrations:
+    - homeAssistant
+    - gpio
+    - shell
+
+# #######################
+# Cluster settings
+# #######################
+# Config options for clustering multiple Room-Assistant
+# Give leader more weight
+cluster:
+  weight: 1
+  networkInterface: eth0
+  port: 6425
+  timeout: 60
+  peerAddresses:
+    # raspi1 patio
+    - 10.10.10.70:6425
+    # raspi2 office
+    - 10.10.10.71:6425
+    # raspi3 sprinkler
+    - 10.10.10.72:6425
+    #raspi4 kitchen
+    - 192.168.1.75:6425 
+    #raspi5 crawlspace
+    - 10.0.0.74:6425
+    # raspi6 garage <-- this cpu
+#   - 10.10.10.73:6425
+
+# #######################
+# home assistant settings
+# #######################
+homeAssistant:
+  mqttUrl: mqtt://10.10.10.21:1883
+  mqttOptions:
+    username: homeassistant
+    password: {LONG_RANDOM_STRING}
+
+# #######################
+# GPIO settings
+# #######################
+gpio:
+  binarySensors:
+##########################
+# NON-FUNCTIONING
+#
+# Connection issue at controller requiring tinkering
+#######################################################
+
+    # Closed garage door position switch
+    # GPIO-23:DB9-2?
+    - name: Garage Door Closed
+      pin: 23
+      deviceClass: garage_door
+    # Partial open garage door position switch
+    # GPIO-25:DB9-?
+    - name: Garage Door Partial Open
+      pin: 25
+      deviceClass: garage_door
+    # Full open garage door position switch
+    # GPIO-24:DB9-?
+    - name: Garage Door Open
+      pin: 24
+      deviceClass: garage_door 
+
+########################################################
+
+    # Garage Back Door position reed switch
+    # GPIO-15:DB9-5
+    - name: Garage Back Door
+      pin: 15
+      deviceClass: door
+    
+    # Garage House Door position reed switch
+    # GPIO-4:DB9-1
+    - name: Garage House Door
+      pin: 4
+      deviceClass: door
+    
+    # PIR motion sensor
+    - name: Garage Motion 1
+      pin: 14
+      deviceClass: motion
+
+# #######################
+# Switches settings
+# #######################
+  switches:
+
+    # Relay 1 - Garage door open/close
+    - name: Garage Door
+      pin: 17
+      icon: mdi:garage-variant
+    
+    # Relay 2 - FAN
+    - name: Garage Fan
+      pin: 18
+      icon: mdi:fan
+    
+    # blue RasPi case LED
+    - name: Garage LED
+      pin: 22
+      icon: mdi:led-on
+# #######################
+# Shell settings
+# #######################
+shell:
+  sensors:
+
+     # DHT11 Sensor reporting the temp °F result
+    - name: Garage Temperature
+      command: 'python3.7 /home/pi/room-assistant/script/myDHT.py'
+      regex: '(-?[0-9.]+)F'
+      cron: '*/2 * * * *'
+      icon: mdi:temperature-fahrenheit
+      unitOfMeasurement: '°F'
+      deviceClass: temperature
+
+     # DHT11 Sensor reporting the humid % result
+    - name: Garage Humidity
+      command: 'python3.7 /home/pi/room-assistant/script/myDHT.py'
+      regex: '(-?[0-9.]+)%'
+      cron: '*/5 * * * *'
+      icon: mdi:water-percent
+      unitOfMeasurement: '%'
+      deviceClass: humidity
+
+#    - name: Garage CPU Temp
+#      command: '/home/pi/room-assistant/script/cpuTemp.sh'
+#      cron: '*/1 * * * *'
+#      unitOfMeasurement: '°F'
+#      deviceClass: temperature
+#      icon: mdi:thermometer-lines
+
+    # Script to check onboard temp sensor reading
+    - name: Garage CPU Temp
+      command: '/home/pi/room-assistant/script/cpuTemp.sh'
+      cron: '*/2 * * * *'
+      unitOfMeasurement: '°F'
+      deviceClass: temperature
+
+    # Script to check voltage and return boolean if no errors seen. 
+    # See the script for more
+    - name: Garage CPU Voltage
+      command: '/home/pi/room-assistant/script/cpuVolt.sh'
+      cron: '1 */1 * * *'
+      deviceClass: power
+
+    # Report CPU uptime in sec
+    - name: Garage CPU Up Time
+      command: '/home/pi/room-assistant/script/cpuUp.sh'
+      cron: '* * * * *'
+      unitOfMeasurement: 's'
+
+    # Free memory `free -h` results
+    - name: Garage CPU Free Memory
+      command: '/home/pi/room-assistant/script/freeMem.sh'
+      cron: '*/10 * * * *'
+      unitOfMeasurement: 'MB'
+
+#    - name: Garage Wifi Strength
+#      command: 'iwconfig wlan0 | grep -i quality'
+#      regex: 'Signal level=(-?[0-9]+) dBm'
+#      cron: '*/30 * * * *'
+#      icon: mdi:wifi
+#      unitOfMeasurement: dBm
+#      deviceClass: signal_strength
+
+#    - name: Garage CPU Free Storage
+#      command: '/home/pi/room-assistant/script/cpuStorage.sh'
+#      cron: '1 * */1 * *'
+#      unitOfMeasurement: 'GB'
+#      deviceClass: timestamp
+
+# #######################
+# Entity settings
+# #######################
+entities:
+  behaviors:
+    garage_motion_sensor:
+      debounce:
+        wait: 0.75
+        maxWait: 2

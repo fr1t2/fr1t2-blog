@@ -1,0 +1,170 @@
+# ########################
+# Raspi Config
+#   hass-raspi3
+#   sprinkler controller - equipment rack garage
+#   Yard sprinklers
+#   pi@10.0.0.71
+# ########################
+
+# ############
+# GPIO Pin-Out
+# ############
+# PIN: 7 Sprinkler Power COM line (Rain Cut)
+# PIN: 8 Zone 9 (NOT CONNECTED)
+# PIN: 14 zone 1 side yard
+# PIN: 15 zone 2 Front Yard
+# PIN: 17 zone 3 Front Yard
+# PIN: 18 zone 4 Back Yard
+# PIN: 22 zone 5 Back Yard
+# PIN: 23 zone 6 Back Yard
+# PIN: 24 zone 7 (NOT CONNECTED)
+# PIN: 25 zone 8 (NOT CONNECTED)
+
+# #######################
+# Global Config settings
+# #######################
+global:
+  instanceName: sprinkler
+  integrations:
+    - homeAssistant
+    - gpio
+    - shell
+
+# #######################
+# Cluster settings
+# #######################
+# Config options for clustering multiple Room-Assistant
+# Give leader more weight
+cluster:
+  weight: 2
+  networkInterface: eth0
+  port: 6425
+  timeout: 60
+  peerAddresses:
+    # raspi1 patio
+    - 10.10.10.70:6425
+    # raspi2 office
+    - 10.10.10.71:6425
+    # raspi3 sprinkler <-- this CPU
+#    - 10.10.10.72:6425
+    #raspi4 kitchen
+    - 192.168.1.75:6425
+    #raspi5 crawlspace
+    - 10.0.0.74:6425
+    # raspi6 garage
+    - 10.10.10.73:6425
+
+# #######################
+# home assistant settings
+# #######################
+homeAssistant:
+  mqttUrl: mqtt://10.10.10.21:1883
+  mqttOptions:
+    username: homeassistant
+    password: {LONG_RANDOM_STRING}
+# #######################
+# GPIO settings
+# #######################
+gpio:
+
+# #######################
+# Switches settings
+# #######################  
+  switches:
+
+    # Each zone wired into a relay to switch the 24V solenoid and release the water
+    
+    # Relay 1 - Side yard zone 1
+    - name: sprinkler zone 1
+      pin: 14
+      icon: mdi:sprinkler-variant
+
+    # Relay 2 - Front Yard zone 2
+    - name: sprinkler zone 2
+      pin: 15
+      icon: mdi:sprinkler-variant
+
+    # Relay 3 - Front Yard zone 3
+    - name: sprinkler zone 3
+      pin: 17
+      icon: mdi:sprinkler-variant
+
+    # Relay 4 - Back Yard zone 4
+    - name: sprinkler zone 4
+      pin: 18
+      icon: mdi:sprinkler-variant
+
+    # Relay 5 - Back Yard zone 5
+    - name: sprinkler zone 5
+      pin: 22
+      icon: mdi:sprinkler-variant
+
+    # Relay 6 - Back Yard zone 6
+    - name: sprinkler zone 6
+      pin: 23
+      icon: mdi:sprinkler-variant
+
+    # Relay 7 - NC
+    - name: sprinkler zone 7
+      pin: 24
+      icon: mdi:sprinkler-variant
+
+    # Relay 8 - NC
+    - name: sprinkler zone  8
+      pin: 25
+      icon: mdi:sprinkler-variant
+
+    # Relay 9 - 
+    - name: sprinkler zone 9
+      pin: 8
+      icon: mdi:sprinkler-variant
+
+    # Relay 10 - COM power connection (rain cutout)
+    - name: sprinkler COM
+      pin: 7
+      icon: mdi:sprinkler-variant
+
+# #######################
+# Shell settings
+# #######################
+shell:
+  sensors:
+
+    - name: Sprinkler CPU Temp
+      command: '/home/pi/room-assistant/script/cpuTemp.sh'
+      cron: '*/2 * * * *'
+      unitOfMeasurement: '°F'
+      deviceClass: temperature
+    
+    # Script to check voltage and return boolean if no errors seen. 
+    # See the script for more
+    - name: Sprinkler CPU Voltage
+      command: '/home/pi/room-assistant/script/cpuVolt.sh'
+      cron: '1 */1 * * *'
+      deviceClass: power
+
+    # Report CPU uptime in sec
+    - name: Sprinkler CPU Up Time
+      command: '/home/pi/room-assistant/script/cpuUp.sh'
+      cron: '* * * * *'
+      unitOfMeasurement: 's'
+
+    # Free memory `free -h` results
+    - name: Sprinkler CPU Free Memory
+      command: '/home/pi/room-assistant/script/freeMem.sh'
+      cron: '*/10 * * * *'
+      unitOfMeasurement: 'MB'
+
+    - name: Sprinkler Wifi Strength
+      command: 'iwconfig wlan0 | grep -i quality'
+      regex: 'Signal level=(-?[0-9]+) dBm'
+      cron: '*/30 * * * *'
+      icon: mdi:wifi
+      unitOfMeasurement: dBm
+      deviceClass: signal_strength
+
+#    - name: Sprinkler CPU Free Storage
+#      command: '/home/pi/room-assistant/script/cpuStorage.sh'
+#      cron: '1 * */1 * *'
+#      unitOfMeasurement: 'GB'
+#      deviceClass: timestamp
