@@ -40,7 +40,7 @@ paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 repository: "fr1t2/fr1t2-blog"
-github: [metadata]
+#github: [metadata]
 
 include:
   - _pages
