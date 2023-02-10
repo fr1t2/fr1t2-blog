@@ -1,0 +1,152 @@
+# ########################
+# Raspi Config
+#   Office controller - Office Desk
+#   hass-raspi2
+#   10.10.10.71
+# ########################
+
+# ############
+# GPIO Pin-Out
+# ############
+#
+# Inputs:
+# Pin: 04 Use: ds18b20 temp sensor using the shell functions below
+# Pin: 24 Use: Office Light Switch (NC)
+# Pin: 25 Use: Office Motion Sensor
+# Pin: 35 Use: CPU voltage
+#
+# Outputs:
+# Pin: 17 Use: Office LED (NC) Relay
+
+# #######################
+# Global Config settings
+# #######################
+global:
+  instanceName: office
+  integrations:
+    - homeAssistant
+    - gpio
+    - shell
+
+# #######################
+# Cluster settings
+# #######################
+# Config options for clustering multiple Room-Assistant
+# Give leader more weight
+cluster:
+  weight: 2
+  networkInterface: eth0
+  port: 6425
+  timeout: 60
+  peerAddresses:
+    # raspi1 patio
+    - 10.10.10.70:6425
+    # raspi2 office
+#    - 10.10.10.71:6425 <-- this cpu
+    # raspi3 sprinkler
+    - 10.10.10.72:6425
+    #raspi4 kitchen
+    - 192.168.1.75:6425
+    #raspi5 crawlspace
+    - 10.0.0.74:6425
+    # raspi6 garage
+    - 10.10.10.73:6425
+
+# #######################
+# home assistant settings
+# #######################
+homeAssistant:
+#  mqttUrl: mqtt://10.10.10.5:1883
+  mqttUrl: mqtt://10.10.10.21:1883
+  mqttOptions:
+    username: homeassistant
+    password: {LONG_RANDOM_STRING}
+
+
+# #######################
+# GPIO settings
+# #######################
+gpio:
+  binarySensors:
+
+    # PIR motion sensor
+    - name: Office Motion Sensor
+      pin: 25
+      deviceClass: motion
+
+    # General Input Switch 
+    - name: Office Switch
+      pin: 24
+
+# #######################
+# Switches settings
+# #######################
+switches:
+
+    # Output GPIO intended for a relay to switch an LED strip
+    - name: Office LED
+      pin: 17
+
+# #######################
+# Shell settings
+# #######################
+shell:
+  sensors:
+
+     # DS18B20 Shelll Sensor
+    - name: Office Temperature
+      command: 'python3.7 /home/pi/room-assistant/script/temperature_sensor_code.py'
+      cron: '* * * * *'
+      icon: mdi:temperature-fahrenheit
+      unitOfMeasurement: '°F'
+      deviceClass: temperature
+
+    - name: Office CPU Temp
+      command: '/home/pi/room-assistant/script/cpuTemp.sh'
+      cron: '*/2 * * * *'
+      unitOfMeasurement: F
+      deviceClass: temperature
+    
+    # Script to check voltage and return boolean if no errors seen. 
+    # See the script for more
+    - name: Office CPU Voltage
+      command: '/home/pi/room-assistant/script/cpuVolt.sh'
+      cron: '1 */1 * * *'
+      deviceClass: power
+
+    # Report CPU uptime in sec
+    - name: Office CPU Up Time
+      command: '/home/pi/room-assistant/script/cpuUp.sh'
+      cron: '* * * * *'
+      unitOfMeasurement: 's'
+
+    # Free memory `free -h` results
+    - name: Office CPU Free Memory
+      command: '/home/pi/room-assistant/script/freeMem.sh'
+      cron: '*/10 * * * *'
+      unitOfMeasurement: 'MB'
+
+#    - name: Office Wifi Strength
+#      command: 'iwconfig wlan0 | grep -i quality'
+#      regex: 'Signal level=(-?[0-9]+) dBm'
+#      cron: '*/30 * * * *'
+#      icon: mdi:wifi
+#      unitOfMeasurement: dBm
+#      deviceClass: signal_strength
+
+#    - name: Office CPU Free Storage
+#      command: '/home/pi/room-assistant/script/cpuStorage.sh'
+#      cron: '1 * */1 * *'
+#      unitOfMeasurement: 'GB'
+#      deviceClass: timestamp
+
+# #######################
+# Entity settings
+# #######################
+entities:
+  behaviors:
+    office_motion_sensor:
+      debounce:
+        wait: 0.75
+        maxWait: 2
+
