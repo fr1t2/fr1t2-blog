@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
     automotive modifications. Basically everything I am interested in and willing to share.  
 twitter_username: just_a_warning
 github_username: fr1t2
-minimal_mistakes_skin: dark
+minimal_mistakes_skin: air
 search: true
 
 # Build settings
@@ -67,9 +67,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "James Gordon"
+  name   : "Fr1t2"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Self proclaimed nerd and builder of things."
+  bio    : ""
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -99,7 +99,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
   # _pages
@@ -109,6 +109,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      share: true
 
 category_archive:
   type: liquid
@@ -116,3 +117,10 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-SDTZJ5Y94R"
+    anonymize_ip: false # default
