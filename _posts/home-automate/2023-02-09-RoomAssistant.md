@@ -9,12 +9,12 @@ categories:
   - roomAssistant
 #layout: single
 header:
-  image: "../assets/images/roomassistant/room-assistant-header.png"
+  image: "/assets/images/roomassistant/room-assistant-header.png"
   #caption: "Room Assistant on raspberry Pi Model B v1"
   teaser: "https://www.room-assistant.io/room-assistant.png"
 image:
-  feature: "../assets/images/roomassistant/room-assistant-header.png"
-  thumb: "../assets/images/roomassistant/room-assistant250.png" #keep it square 200x200 px is good
+  feature: "/assets/images/roomassistant/room-assistant-header.png"
+  thumb: "/assets/images/roomassistant/room-assistant250.png" #keep it square 200x200 px is good
 tags:
   - Homeassistant
   - hass
@@ -27,21 +27,21 @@ classes: wide
 toc: true
 
 feature_row:
-  - image_path: "../assets/images/roomassistant/sprinkler/SprinklerRaspi.png"
+  - image_path: "../assets/images/roomassistant/SprinklerRaspi.png"
     alt: "sprinkler raspi wiring"
     title: "Sprinkler Control"
     excerpt: "Sprinkler zond controls and automation for an 8 zone system."
     url: "/homeautomation/roomassistant/RoomAssistant_Furnace/"
     btn_label: "Read More"
     btn_class: "btn--inverse"
-  - image_path: "../assets/images/roomassistant/furnace/FurnaceRaspi.png"
+  - image_path: "../assets/images/roomassistant/FurnaceRaspi.png"
     alt: "furnace wiring"
     title: "Furnace Control"
     excerpt: "HVAC Controls for Heat and AC through Home Assistant"
     url: "/homeautomation/roomassistant/RoomAssistant_Furnace/"
     btn_label: "Read More"
     btn_class: "btn--inverse"
-  - image_path: "../assets/images/roomassistant/garage/GarageRaspi.png"
+  - image_path: "../assets/images/roomassistant/GarageRaspi.png"
     alt: "garage raspi wiring"
     title: "Garage Control"
     excerpt: "Garage Controls, including overhead door."
