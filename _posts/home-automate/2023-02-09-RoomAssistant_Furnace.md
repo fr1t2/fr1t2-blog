@@ -3,7 +3,7 @@ title: "Room Assistant - Furnace Raspi"
 last_modified_at: 2023-02-09T17:38:06-05:00
 date: 2023-02-09T17:38:06-05:00
 excerpt_separator: "<!--more-->"
-excerpt: "Room Assistant & Raspi armv6 installation and configuration for the furnace controls"
+excerpt: "Room Assistant & Raspi armV6 installation and configuration built into a smart IoT the furnace controller."
 categories:
   - homeAutomation
   - roomAssistant
@@ -11,14 +11,22 @@ excerpt_separator: "<!--more-->"
 #layout: single
 header:
   overlay_image: "/assets/images/roomassistant/raspi-header.png"
+  overlay_filter: 0.5
   #caption: "Room Assistant on raspberry Pi Model B v1"
   teaser: "/assets/images/roomassistant/raspi-header-thumb.png"
-#image:
-#  feature: "/assets/images/roomassistant/room-assistant-header.png"
-#  thumb: "/assets/images/roomassistant/room-assistant250.png" #keep it square 200x200 px is good
+  og_image: "/assets/images/roomassistant/raspi-header-thumb.png"
+image:
+  feature: "/assets/images/roomassistant/raspi-header.png"
+  thumb: "/assets/images/roomassistant/raspi-header-thumb.png" #keep it square 200x200 px is good
 
-classes: wide
+#classes: wide
 toc: true
+toc_sticky: true
+
+sidebar:
+  title: "Home Automation"
+  nav: home-automation
+
 
 tags:
   - Homeassistant
@@ -29,6 +37,13 @@ tags:
   - controls
   - IoT
   - "furnace control"
+
+
+gallery:
+  - url: /assets/images/roomassistant/FurnaceRaspi-solid.png
+    image_path: /assets/images/roomassistant/FurnaceRaspi-th.png
+    alt: "furnace raspi wiring diagram"
+    title: "Furnace Wiring Diagram"
 
 ---
 
@@ -43,9 +58,18 @@ Raspi model B used as a room controller and extension of the home assistant inst
 
 The furnace controller is one of my favorite and most used integrations so far.
 
-![furnace device wiring](/assets/images/roomassistant/FurnaceRaspi.png)
 
-Not too difficult or complex, though when combined with multiple temperature sensors around the house the functionality is unmatched. Using some old hardware and a few relays, I have an smart furnace and energy savings!
+
+### Wiring 
+
+Wiring diagram for the furnace control devices and connections.
+
+{% include gallery %}{: .align-center }
+
+
+Not too difficult or complex, though when combined with multiple temperature sensors around the house the functionality is unmatched. 
+
+Using some old hardware and a few relays, I have an smart furnace and energy savings!
 
 ## Info and Use
 
@@ -90,7 +114,7 @@ Everything is controlled and mapped to the home assistant dashboard over MQTT vi
 
 #### Room Assistant Config
 
-This config file is the meat and potatoes of the program. Find it in the `/home/$USER/room-assistant/config/local.yml`
+This config file is the meat and potatoes of the program. Find it in  `/home/$USER/room-assistant/config/local.yml`
 
 ```yaml
 {% include_relative /include/room-assistant/furnace.local.yaml %}
@@ -98,7 +122,23 @@ This config file is the meat and potatoes of the program. Find it in the `/home/
 
 #### Scripts
 
-Some additional helper scripts were also developed to return some info on the device for integrations and status's over in home assistant. 
+Some additional helper scripts were also developed to return info on the device for integrations and status's over in home assistant. 
+
+Add these to room assistant using the `shell.sensors` function like this:
+
+```bash
+shell:
+  sensors:
+
+     # DHT11 Sensor reporting the temp °F result
+    - name: Garage Temperature
+      command: 'python3.7 /home/pi/room-assistant/script/myDHT.py'
+      regex: '(-?[0-9.]+)F'
+      cron: '*/2 * * * *'
+      icon: mdi:temperature-fahrenheit
+      unitOfMeasurement: '°F'
+      deviceClass: temperature
+```
 
 ##### cpuUp.sh
 

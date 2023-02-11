@@ -26,6 +26,9 @@ tags:
   - IoT
 classes: wide
 toc: true
+sidebar:
+  title: "Home Automation"
+  nav: home-automation
 
 feature_row:
   - image_path: "../assets/images/roomassistant/SprinklerRaspi.png"
