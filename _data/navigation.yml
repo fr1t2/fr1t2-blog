@@ -20,10 +20,10 @@ home-automation:
         url: /homeautomation/roomassistant/RoomAssistant_Furnace/
       - title: "Garage Raspi"
         url: /homeautomation/roomassistant/RoomAssistant_Garage/
-#      - title: "Kitchen Raspi"
-#        url: /homeautomation/roomassistant/RoomAssistant_Kitchen/
-#      - title: "Office Raspi"
-#        url: /homeautomation/roomassistant/RoomAssistant_Office/
+      - title: "Kitchen Raspi"
+        url: /homeautomation/roomassistant/RoomAssistant_Kitchen/
+      - title: "Office Raspi"
+        url: /homeautomation/roomassistant/RoomAssistant_Office/
       - title: "Sprinkler Raspi"
         url: /homeautomation/roomassistant/RoomAssistant_Sprinkler/
 #  - title: "Home Assistant"

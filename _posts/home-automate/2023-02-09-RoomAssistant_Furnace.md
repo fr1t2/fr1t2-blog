@@ -58,6 +58,9 @@ The furnace controller is one of my favorite and most used integrations so far.
 
 This one is located in my furnace connected to the interface to control the fan, heat and AC for the furnace through some 5v relays and a Raspi model B.
 
+On the Raspbian OS running on the pi I have installed [Room Assistant](https://www.room-assistant.io/) following [this guide](/homeautomation/roomassistant/RoomAssistant/) to handle the low level communication stuff back to my [Home Assistant](https://www.room-assistant.io/) server.
+
+
 ### Wiring 
 
 Wiring diagram for the furnace control devices and connections.
@@ -68,9 +71,11 @@ Not too difficult or complex, though when combined with multiple temperature sen
 
 Using some old hardware and a few relays, I have an smart furnace and energy savings!
 
-## Info and Use
+### Furnace Info and Use
 
-One of the issues in the rental home I live in is the inconsistency of HVAC coverage throughout the house. This drove me crazy, upstairs is too hot while the downstairs rooms needed mittens and a hat. The main issue being with the main temp reading coming from the stair mid house.
+One of the issues in the rental home I live in is the inconsistency of HVAC coverage throughout the house. This drove me crazy! 
+
+Upstairs is too hot while the downstairs rooms needed mittens and a hat. The main issue being with the main temp reading coming from the stair mid house.
 
 We have a split level 3 bed with a small blower furnace in the crawl space of the house and duct work run all throughout (*except the downstairs bathroom for some reason*). 
 
@@ -78,20 +83,20 @@ The location of the thermostat, while central is not the best representation of 
 
 I had enough, time to automate it!
 
-### Hardware
+## Hardware
 
 Using on old Raspberry Pi that was a dumpster find, I built the controller with (3) 5v relay boards and a DHT11 temp sensor.
 
 These relays are mounted to the top of the controller with DuPont cables connected to GPIO pins on the pi and the temp sensor up on a few stand-offs outside of the case.
 
 
-#### Network and Power
+### Network and Power
 
 Previously I had run a bunch of network cables around the house through the crawl space and luckily I was able to re-purpose one of these for the cause. This hardwired connection provides reliable connectivity. 
 
 Power is fed from a 5v android wall charger in the same outlet that feeds the furnace. There was an open socket and it is switched with the furnace by US building code, so it will shutdown if something needs service later.
 
-#### Furnace Controls
+### Furnace Controls
 
 The furnace Pi is connected directly to the 12v furnace interface in parallel with the existing house thermostat controller.
 
@@ -99,25 +104,25 @@ This is due to the lack of confidence in the initial controllers performance and
 
 Since the house is a rental, and the landlord likely wont approve, the main t-stat is still connected for immediate control if needed at the wall. Stealth home control!
 
-##### Mounting
+#### Mounting
 
 The unit is mounted in the furnace, resting in the return air path due to clearance, cable pathway requirements, and not wanting to modify anything not mine. 
 
 This provided an additional benefit of having a dht11 temp/humid sensor in the return air path. More sensor data!!
 
-### Software
+## Software
 
 Everything is controlled and mapped to the home assistant dashboard over MQTT via the room-assistant system. 
 
-#### Room Assistant Config
+### Room Assistant Config
 
-This config file is the meat and potatoes of the program. Find it in  `/home/$USER/room-assistant/config/local.yml`
+This config file is the meat and potatoes of the program. Find it in  `/home/$USER/room-assistant/config/local.yml` on the Raspberry Pi.
 
 ```yaml
 {% include_relative /include/room-assistant/furnace.local.yaml %}
 ```
 
-#### Scripts
+### Scripts
 
 Some additional helper scripts were also developed to return info on the device for integrations and status's over in home assistant. 
 
@@ -137,7 +142,7 @@ shell:
       deviceClass: temperature
 ```
 
-##### cpuUp.sh
+#### cpuUp.sh
 
 return the uptime in seconds formatted as int
 
@@ -145,7 +150,7 @@ return the uptime in seconds formatted as int
 {% include_relative /include/room-assistant/script/furnace/cpuUp.sh %}
 ```
 
-##### cpuTemp.sh
+#### cpuTemp.sh
 
 return the CPU reported temp
 
@@ -153,7 +158,7 @@ return the CPU reported temp
 {% include_relative /include/room-assistant/script/furnace/cpuTemp.sh%}
 ```
 
-##### freeMem.sh
+#### freeMem.sh
 
 returns the remaining RAM on the pi
 
@@ -161,7 +166,7 @@ returns the remaining RAM on the pi
 {% include_relative /include/room-assistant/script/furnace/freeMem.sh%}
 ```
 
-##### myDHT.py
+#### myDHT.py
 
 adapted DHT11 temp sensor reading temp and humid
 
@@ -169,7 +174,7 @@ adapted DHT11 temp sensor reading temp and humid
 {% include_relative /include/room-assistant/script/furnace/myDHT.py%}
 ```
 
-##### temperature_sensor_code.py
+#### temperature_sensor_code.py
 
 read DS18B20 sensor, report value in F
 
@@ -177,7 +182,7 @@ read DS18B20 sensor, report value in F
 {% include_relative /include/room-assistant/script/furnace/temperature_sensor_code.py%}
 ```
 
-##### cpuVolt.sh
+#### cpuVolt.sh
 
 return boolean if no issues with voltage (power supply failure)
 
