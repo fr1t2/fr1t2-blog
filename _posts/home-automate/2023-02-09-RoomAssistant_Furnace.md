@@ -3,7 +3,7 @@ title: "Room Assistant - Furnace Raspi"
 last_modified_at: 2023-02-09T17:38:06-05:00
 date: 2023-02-09T17:38:06-05:00
 excerpt_separator: "<!--more-->"
-excerpt: "Room Assistant & Raspi armV6 installation and configuration built into a smart IoT the furnace controller."
+excerpt: "Room Assistant & Raspberry Pi smart IoT furnace controller built for Home Assistant HVAC control."
 categories:
   - homeAutomation
   - roomAssistant
@@ -47,25 +47,22 @@ gallery:
 
 ---
 
+
+## Furnace Raspi Overview
+
 HVAC control through Home Assistant thanks to a Raspberry Pi and [Room Assistant](https://www.room-assistant.io/).
 
 <!--more-->
 
-Raspi model B used as a room controller and extension of the home assistant installation. This one is located in my furnace connected to the interface to control the fan, heat and AC for the furnace.
-
-
-## Overview
-
 The furnace controller is one of my favorite and most used integrations so far.
 
-
+This one is located in my furnace connected to the interface to control the fan, heat and AC for the furnace through some 5v relays and a Raspi model B.
 
 ### Wiring 
 
 Wiring diagram for the furnace control devices and connections.
 
 {% include gallery %}{: .align-center }
-
 
 Not too difficult or complex, though when combined with multiple temperature sensors around the house the functionality is unmatched. 
 
