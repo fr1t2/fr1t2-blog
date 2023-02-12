@@ -14,12 +14,12 @@ header:
   overlay_image: "/assets/images/roomassistant/raspi-header.png"
   overlay_filter: 0.5
   #caption: "Room Assistant on raspberry Pi Model B v1"
-  teaser: "/assets/images/roomassistant/raspi-header-thumb.png"
-  og_image: "/assets/images/roomassistant/raspi-header-thumb.png"
+  teaser: "/assets/images/raspi-full-th.png"
+  og_image: "/assets/images/raspi-full-th.png"
 
 image:
-  feature: "/assets/images/roomassistant/raspi-header.png"
-  thumb: "/assets/images/roomassistant/raspi-header-thumb.png" #keep it square 200x200 px is good
+  feature: "/assets/images/raspi-full.png"
+  thumb: "/assets/images/raspi-full-th.png" #keep it square 200x200 px is good
 
 toc: true
 toc_sticky: true
@@ -55,6 +55,8 @@ Smart garages are the next big thing in home automation, and with the help of a 
 In this post, we'll be covering the complete guide to building a smart garage control system using a Raspberry Pi and Room-Assistant, including the wiring, hardware, and network and power requirements. 
 
 We'll also be discussing the various garage functions that you can add, such as relay for garage door opener, reed switch for manual doors open/closed status, PIR motion for occupancy sensor, and DHT11 temperature and humidity sensor. 
+
+![](/assets/images/roomassistant/raspi-header-thumb.png)
 
 <!-- more -->
 

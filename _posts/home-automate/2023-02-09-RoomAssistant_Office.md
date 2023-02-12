@@ -14,12 +14,12 @@ header:
   overlay_image: "/assets/images/roomassistant/raspi-header.png"
   overlay_filter: 0.5
   #caption: "Room Assistant on raspberry Pi Model B v1"
-  teaser: "/assets/images/roomassistant/raspi-header-thumb.png"
-  og_image: "/assets/images/roomassistant/raspi-header-thumb.png"
+  teaser: "/assets/images/raspi-1-bw-sq.png"
+  og_image: "/assets/images/raspi-1-bw-th.png"
 
 image:
-  feature: "/assets/images/roomassistant/raspi-header.png"
-  thumb: "/assets/images/roomassistant/raspi-header-thumb.png" #keep it square 200x200 px is good
+  feature: "/assets/images/raspi-1-bw-sq.png"
+  thumb: "/assets/images/raspi-1-bw-th.png" #keep it square 200x200 px is good
 
 toc: true
 toc_sticky: true
