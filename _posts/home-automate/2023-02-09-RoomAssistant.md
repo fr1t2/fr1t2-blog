@@ -2,19 +2,20 @@
 title: "Room Assistant on Raspberry Pi armv6"
 last_modified_at: 2023-02-09T17:38:06-05:00
 date: 2023-02-09T17:38:06-05:00
-excerpt_separator: "<!--more-->"
-excerpt: "Room Assistant & Raspi armv6 installation and configuration"
 categories:
   - homeAutomation
   - roomAssistant
 #layout: single
+
+excerpt: "Room Assistant & Raspi armv6 installation and configuration"
+#excerpt_separator: "<!--more-->"
 header:
-  image: "/assets/images/roomassistant/room-assistant-header.png"
+  overlay_image: "/assets/images/room-assistant-header.png"
   #caption: "Room Assistant on raspberry Pi Model B v1"
   teaser: "https://www.room-assistant.io/room-assistant.png"
 image:
-  feature: "/assets/images/roomassistant/room-assistant-header.png"
-  thumb: "/assets/images/roomassistant/room-assistant250.png" #keep it square 200x200 px is good
+  feature: "/assets/images/room-assistant-header.png"
+  thumb: "/assets/images/room-assistant250.png" #keep it square 200x200 px is good
 tags:
   - Homeassistant
   - hass
@@ -25,23 +26,26 @@ tags:
   - IoT
 classes: wide
 toc: true
+sidebar:
+  title: "Home Automation"
+  nav: home-automation
 
 feature_row:
-  - image_path: /assets/images/roomassistant/sprinkler/SprinklerRaspi.png
+  - image_path: "../assets/images/roomassistant/SprinklerRaspi.png"
     alt: "sprinkler raspi wiring"
     title: "Sprinkler Control"
     excerpt: "Sprinkler zond controls and automation for an 8 zone system."
     url: "/homeautomation/roomassistant/RoomAssistant_Furnace/"
     btn_label: "Read More"
     btn_class: "btn--inverse"
-  - image_path: /assets/images/roomassistant/furnace/FurnaceRaspi.png
+  - image_path: "../assets/images/roomassistant/FurnaceRaspi.png"
     alt: "furnace wiring"
     title: "Furnace Control"
     excerpt: "HVAC Controls for Heat and AC through Home Assistant"
     url: "/homeautomation/roomassistant/RoomAssistant_Furnace/"
     btn_label: "Read More"
     btn_class: "btn--inverse"
-  - image_path: /assets/images/roomassistant/garage/GarageRaspi.png
+  - image_path: "../assets/images/roomassistant/GarageRaspi.png"
     alt: "garage raspi wiring"
     title: "Garage Control"
     excerpt: "Garage Controls, including overhead door."
@@ -68,25 +72,30 @@ feature_row:
 ---
 
 
-![](/assets/images/roomassistant/room-assistant250.png){: .align-left} 
-Home automation devices built on the [Room assistant platform](https://www.room-assistant.io/), communicating with Home Assistant through MQTT, 
-using [Raspberry Pi single board computers](https://www.raspberrypi.com/)
-<!-- more -->
+![](/assets/images/room-assistant250.png ){: .align-left} 
 
 
-I've spent years searching for a home automation system that meets my needs, which is not an easy task. My criteria is a little strict on what I will allow into my private life and home.
+
+I've spent years searching for a home automation system that meets my needs, which is not an easy task. 
+My criteria is a little strict on what I will allow into my private life and home. 
+
+What started as a want to control the sprinkler from my phone lead down a dark and lonely path, 
+full of shady vendors wanting into my private network to scrape my data. Looking at commercial 
+solutions left me discouraged, around every corner someone trying to take your data for their own use (looking at you amazon...) 
 
 During the search for the perfect solution a few key pieces fell into place:
 
-- I was given 30+ old pi's that were installed in a commercial application used to measure sound levels and attenuate a TV accordingly. 
-After some planned upgrades the system was scratched and removed. Instead of the dumpster I gave them a new home.
-- I discovered home assistant and began using it to collect all of my devices into a single dashboard.
+- I discovered [Home Assistant](https://www.home-assistant.io/) and began using it to collect all of my devices into a single dashboard. My data stays home (mostly)
+- I was given 30+ old Raspberry Pi's that were installed in a commercial application that was sunset and removed. Instead of the dumpster I gave them a new home.
 
 Now I just needed a way to use all of these old Raspberry Pi's to interface with my world and home assistant. 
 
 **Enter Room-Assistant!**
 
 > Using recycled hardware, Open Source projects, some time and ingenuity, I've managed to automate my house!
+
+I settled on building custom devices on the [Room assistant platform](https://www.room-assistant.io/), communicating with Home Assistant through MQTT, 
+using [Raspberry Pi single board computers](https://www.raspberrypi.com/).
 
 These Raspi's came with nice little milled aluminum cases that keep the pi cool that allows a variety of devices to be mounted to the case, 
 such as relay boards and occupancy sensors. Off to building some IoT devices to make controlling our environment easier and more efficient.

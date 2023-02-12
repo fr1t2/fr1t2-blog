@@ -1,9 +1,39 @@
 main:
-  - title: "Posts"
-    url: /posts/
+  - title: "Blog"
+    url: /blog
   - title: "Categories"
     url: /categories/
   - title: "Tags"
     url: /tags/
   - title: "About"
     url: /about/
+
+
+
+# used in any home assistant pages to collect all of the related blog/pages together
+home-automation:
+  - title: "Room Assistant"
+    children:
+      - title: "Room Assistant Raspi Install"
+        url: /homeautomation/roomassistant/RoomAssistant/
+      - title: "Furnace Raspi"
+        url: /homeautomation/roomassistant/RoomAssistant_Furnace/
+      - title: "Garage Raspi"
+        url: /homeautomation/roomassistant/RoomAssistant_Garage/
+      - title: "Kitchen Raspi"
+        url: /homeautomation/roomassistant/RoomAssistant_Kitchen/
+      - title: "Office Raspi"
+        url: /homeautomation/roomassistant/RoomAssistant_Office/
+      - title: "Sprinkler Raspi"
+        url: /homeautomation/roomassistant/RoomAssistant_Sprinkler/
+#  - title: "Home Assistant"
+#    children:
+#      - title: "Home Assistant Info"
+#        url: /
+
+
+automotive:
+  - title: "Ram"
+    children:
+      - title: "Washer Hose Replacement"
+        url: /homeautomation/automotive/ram/
