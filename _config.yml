@@ -116,7 +116,7 @@ analytics:
 author:
   name   : "Fr1t2"
   avatar : "https://avatars0.githubusercontent.com/u/22141056?s=460&v=4"
-  bio    : "Pushing boundaries and testing limits. Unwilling to waver in the face of defeat. Lover of challenge and as such, I strive to overcome and solve all challenges presented."
+  #bio    : "Pushing boundaries and testing limits. Unwilling to waver in the face of defeat. Lover of challenge and as such, I strive to overcome and solve all challenges presented."
   links:
 
     - label: "GitHub"
@@ -150,18 +150,6 @@ author:
     - label: "PGP Key"
       icon: "fab fa-fw fa-key"
       url: "https://keybase.io/just_a_warning/pgp_keys.asc"      
-
-# Delete the lines you don't need
-# about 5 elements are recomended
-github_username:  fr1t2
-twitter_username: just_a_warning
-linkedin_username: james-gordon
-#stack_of_username: your_stack_overflow_account_id_number_goes_here
-reddit_username: fr1t2
-blog_url: "https://st.fr1t2.com"
-email: fr1t2@protonmail.com
-keybase: just_a_warning
-public_key_url: "https://keybase.io/just_a_warning/pgp_keys.asc?fingerprint=78efcea83ea43a5994bec3b9d27d843e3135f910"
 
 
 footer:
@@ -278,7 +266,7 @@ sass:
 
 
 # Outputting
-permalink: /posts/:categories/:title/
+permalink: :categories/:title/
 paginate: 7 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
