@@ -17,18 +17,20 @@
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 locale                   : "en-US"
-title                    : "Fr1t2 Blog"
+title                    : "Fr1t2"
 title_separator          : "|"
-subtitle                 : "A place to put my thoughts..." # site tagline that appears below site title in masthead
+#subtitle                 : "A place to put my thoughts..." # site tagline that appears below site title in masthead
 
 name                     : "Fr1t2"
 description              : >- # this means to ignore newlines until "url:"
-                          Technical blog covering a wide array of topics from Blockchain, linux administration, IoT devices, Home Assistant integrations, Arduino projects,
+                          Personal site and blog covering a wide array of topics from Blockchain, linux administration, IoT devices, Home Assistant integrations, Arduino projects,
                           automotive modifications. Basically everything I am interested in and willing to share.  
+
 #url                      : "https://blog.fr1t2.com"
 #baseurl                  :
+
 url                      : "https://fr1t2.com"
-baseurl                  : "/blog"
+baseurl                  : 
 
 repository               : "fr1t2/fr1t2-blog"
 
@@ -113,27 +115,89 @@ analytics:
 
 author:
   name   : "Fr1t2"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : ""
+  avatar : "https://avatars0.githubusercontent.com/u/22141056?s=460&v=4"
+  bio    : "Pushing boundaries and testing limits. Unwilling to waver in the face of defeat. Lover of challenge and as such, I strive to overcome and solve all challenges presented."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://fr1t2.com"
+
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/fr1t2"    
-#    - label: "Twitter"
-#      icon: "fab fa-fw fa-twitter-square"
-#      url: "https://twitter.com/just_a_warning"
-    - label: "KeyBase"
+      url: "https://github.com/fr1t2"
+
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/just_a_warning"
+
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/james-gordon"    
+
+    - label: "Reddit"
+      icon: "fab fa-fw fa-reddit"
+      url: "https://reddit.com/user/fr1t2"
+    
+    - label: "Medium"
+      icon: "fab fa-fw fa-medium"
+      url: "https://medium.com/@jbgordon44"
+   
+    - label: "Email"
+      icon: "fab fa-fw fa-envelope"
+      url: "mailto:fr1t2@protonmail.com"
+    
+    - label: "Keybase"
       icon: "fab fa-fw fa-keybase"
       url: "https://keybase.io/just_a_warning"
+
+    - label: "PGP Key"
+      icon: "fab fa-fw fa-key"
+      url: "https://keybase.io/just_a_warning/pgp_keys.asc"      
+
+# Delete the lines you don't need
+# about 5 elements are recomended
+github_username:  fr1t2
+twitter_username: just_a_warning
+linkedin_username: james-gordon
+#stack_of_username: your_stack_overflow_account_id_number_goes_here
+reddit_username: fr1t2
+blog_url: "https://st.fr1t2.com"
+email: fr1t2@protonmail.com
+keybase: just_a_warning
+public_key_url: "https://keybase.io/just_a_warning/pgp_keys.asc?fingerprint=78efcea83ea43a5994bec3b9d27d843e3135f910"
+
 
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/fr1t2"
+
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/just_a_warning"
+
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/james-gordon"    
+
+    - label: "Reddit"
+      icon: "fab fa-fw fa-reddit"
+      url: "https://reddit.com/user/fr1t2"
+    
+    - label: "Medium"
+      icon: "fab fa-fw fa-medium"
+      url: "https://medium.com/@jbgordon44"
+   
+    - label: "Email"
+      icon: "fab fa-fw fa-envelope"
+      url: "mailto:fr1t2@protonmail.com"
+    
+    - label: "Keybase"
+      icon: "fab fa-fw fa-keybase"
+      url: "https://keybase.io/just_a_warning"
+
+    - label: "PGP Key"
+      icon: "fab fa-fw fa-key"
+      url: "https://keybase.io/just_a_warning/pgp_keys.asc"
+
 
 
 
@@ -142,6 +206,7 @@ include:
   - .htaccess
   - _pages
   - assets  
+
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -213,8 +278,8 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
-paginate: 10 # amount of posts to show
+permalink: /posts/:categories/:title/
+paginate: 7 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
@@ -303,3 +368,9 @@ defaults:
       layout: single
       author_profile: true
       share: true
+
+
+# You can link to your GitHub image. That way it will get updated
+# automatically whenever you change your GitHub profile picture
+avatar_img_path: "https://avatars0.githubusercontent.com/u/22141056?s=460&v=4"
+
