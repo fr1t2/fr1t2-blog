@@ -1,9 +1,9 @@
 ---
-title: "Room Assistant - Office Raspi"
+title: "Building a Smart Office with Room Assistant a Raspberry Pi and Home-Assistant"
 last_modified_at: 2023-02-10T17:35:06-05:00
 date: 2023-02-10T17:38:06-05:00
 excerpt_separator: "<!--more-->"
-excerpt: "Office controller built using a Raspberry Pi, Home-Assistant, and Room-Assistant for full motion and occupancy sensing and light control."
+excerpt: "Building an Office Raspberry Pi that serves as a room controller, utilizing the Room Assistant software and Home Assistant for full motion and occupancy sensing and light control."
 categories:
   - homeAutomation
   - roomAssistant

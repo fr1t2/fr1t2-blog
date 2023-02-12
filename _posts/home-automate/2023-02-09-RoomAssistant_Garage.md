@@ -1,9 +1,9 @@
 ---
-title: "Room Assistant - Garage Raspi"
+title: "Smart Garage Control using Raspberry Pi and Room-Assistant"
 last_modified_at: 2023-02-10T14:58:06-05:00
 date: 2023-02-09T17:38:06-05:00
 excerpt_separator: "<!--more-->"
-excerpt: "Garage door smart controller using a Raspberry Pi,  Home-Assistant and Room-Assistant for full garage control."
+excerpt: "Garage door smart controller using a Raspberry Pi, Home-Assistant and Room-Assistant providing full control of the garage door, temperature and door status monitoring, and advanced automations."
 categories:
   - homeAutomation
   - roomAssistant
@@ -49,7 +49,12 @@ gallery:
 
 ## Garage Raspi Overview
 
-The garage controller allows additional functionality to the home automation system giving app control of the garage door and monitoring of temperature and door status while away. 
+
+Smart garages are the next big thing in home automation, and with the help of a Raspberry Pi, Home-Assistant and Room-Assistant, you can easily convert your garage into a smart garage that provides full control of your garage door, temperature and door status monitoring, and advanced automations. 
+
+In this post, we'll be covering the complete guide to building a smart garage control system using a Raspberry Pi and Room-Assistant, including the wiring, hardware, and network and power requirements. 
+
+We'll also be discussing the various garage functions that you can add, such as relay for garage door opener, reed switch for manual doors open/closed status, PIR motion for occupancy sensor, and DHT11 temperature and humidity sensor. 
 
 <!-- more -->
 

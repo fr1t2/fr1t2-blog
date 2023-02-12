@@ -1,9 +1,9 @@
 ---
-title: "Room Assistant - Kitchen Raspi"
+title: "Building a Kitchen Assistant with Raspberry Pi and Room Assistant"
 last_modified_at: 2023-02-10T17:35:06-05:00
 date: 2023-02-10T17:38:06-05:00
 excerpt_separator: "<!--more-->"
-excerpt: "Kitchen controller built using a Raspberry Pi, Home-Assistant, and Room-Assistant for full IoT control."
+excerpt: "Transform your kitchen into a smart space with a Raspberry Pi Model B v1, Room-Assistant, and Home-Assistant, including motion and temperature sensors, and relays for full IoT control."
 categories:
   - homeAutomation
   - roomAssistant

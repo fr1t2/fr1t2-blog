@@ -1,5 +1,5 @@
 ---
-title: "Room Assistant - Sprinkler Raspi"
+title: "Smart Sprinkler Control with Raspberry Pi, Home-Assistant and Room-Assistant"
 last_modified_at: 2023-02-10T17:35:06-05:00
 date: 2023-02-09T17:38:06-05:00
 excerpt_separator: "<!--more-->"

@@ -1,9 +1,9 @@
 ---
-title: "Room Assistant - Furnace Raspi"
+title: "Smart HVAC Control with Room Assistant and Raspberry Pi"
 last_modified_at: 2023-02-09T17:38:06-05:00
 date: 2023-02-09T17:38:06-05:00
 excerpt_separator: "<!--more-->"
-excerpt: "Room Assistant & Raspberry Pi smart IoT furnace controller built for Home Assistant HVAC control."
+excerpt: "Experience reliable HVAC control through Home Assistant with the Room Assistant & Raspberry Pi furnace controller, ensuring energy savings and consistent temperature throughout your home."
 categories:
   - homeAutomation
   - roomAssistant
@@ -50,7 +50,8 @@ gallery:
 
 ## Furnace Raspi Overview
 
-HVAC control through Home Assistant thanks to a Raspberry Pi and [Room Assistant](https://www.room-assistant.io/).
+Smart HVAC control is now possible through Home Assistant with the help of [Room Assistant](https://www.room-assistant.io/) and a Raspberry Pi furnace controller, providing reliable energy savings and consistent temperature throughout your home.
+
 
 <!--more-->
 
@@ -196,3 +197,8 @@ return boolean if no issues with voltage (power supply failure)
 - Additional temp sensors affixed to the water pipe lines (hot water usage?) 
 - Additional sensor in the crawl space generally (freeze protection).
 - Leak detection around water pipe service connection and sprinkler branch
+
+
+In conclusion, the Room Assistant and Raspberry Pi furnace controller provides a reliable and efficient solution to HVAC control, allowing for energy savings and consistent temperature throughout the home. 
+
+The combination of low-cost hardware and smart automation software makes this project a great example of how to integrate IoT into your home. Whether you're looking to automate your furnace or just make your home more comfortable, this setup is a great starting point that can be adapted to suit your individual needs.
