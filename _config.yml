@@ -19,7 +19,7 @@ minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "n
 locale                   : "en-US"
 title                    : "Fr1t2"
 title_separator          : "|"
-#subtitle                 : "A place to put my thoughts..." # site tagline that appears below site title in masthead
+subtitle                 : "A place to put my thoughts..." # site tagline that appears below site title in masthead
 
 name                     : "Fr1t2"
 description              : >- # this means to ignore newlines until "url:"
