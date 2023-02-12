@@ -25,8 +25,11 @@ name                     : "Fr1t2"
 description              : >- # this means to ignore newlines until "url:"
                           Technical blog covering a wide array of topics from Blockchain, linux administration, IoT devices, Home Assistant integrations, Arduino projects,
                           automotive modifications. Basically everything I am interested in and willing to share.  
-url                      : "https://blog.fr1t2.com"
-baseurl                  :
+#url                      : "https://blog.fr1t2.com"
+#baseurl                  :
+url                      : "https://fr1t2.com"
+baseurl                  : "/blog"
+
 repository               : "fr1t2/fr1t2-blog"
 
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
