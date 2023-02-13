@@ -193,7 +193,10 @@ footer:
 include:
   - .htaccess
   - _pages
-  - assets  
+  - assets
+  - privacy.md
+  - ads.txt
+  - robots.txt
 
 exclude:
   - "*.sublime-project"
@@ -266,7 +269,7 @@ sass:
 
 
 # Outputting
-permalink: :categories/:title/
+permalink: blog/:categories/:title
 paginate: 7 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
