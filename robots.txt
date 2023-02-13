@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fr1t2.com/sitemap.xml
