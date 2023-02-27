@@ -159,7 +159,7 @@ Running the new hose in a similar path, making sure to avoid any pinch points wi
 
 I zip tied the hose into place using the old hose tie downs and some clever routing through the hood structure. 
 
-## The Final Product: A Fully Functional Washer Systemt
+## The Final Product: A Fully Functional Washer System
 
 I think the end result came out great, new hose routed in place of the old looks pretty good. Since this was a free-be with all found parts I can accept the color but if I had a choice I would have gone with black. 
 
