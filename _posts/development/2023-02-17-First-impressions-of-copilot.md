@@ -1,6 +1,6 @@
 ---
 title: "First Impressions Of GitHub Co-Pilot"
-last_modified_at: 2023-02-17T07:26:06-05:00
+last_modified_at: 2023-02-17T11:42:00-05:00
 date: 2023-02-17T07:26:06-05:00
 excerpt_separator: "<!--more-->"
 #excerpt: "My first impressions while using the new GitHub AI Copilot in Sublime text while developing a python program in linux."
@@ -20,13 +20,6 @@ image:
   feature: "/assets/images/github-copilot/github_logo-copilot-tease.webp"
   thumb: "/assets/images/github-copilot/github_logo-teaser-sq.webp" #keep it square 200x200 px is good
 
-#toc: true
-#toc_sticky: true
-
-#sidebar:
-#  title: "Automotive"
-#  nav: automotive
-
 tags:
   - Github
   - Copilot
@@ -35,21 +28,6 @@ tags:
   - Code
   - Python
   - Sublime Text
-
-
-#gallery:
-#  - url: /image_FULL
-#    image_path: /image_sq
-#    alt: "liner removal"
-#    title: "Removing the liner retainer clips"
-#  - url: /image_image_FULL
-#    image_path: /image_image_sq
-#    alt: "liner removal"
-#    title: "Retainer Clip Tools"
-#  - url: /image_image_FULL
-#    image_path: /image_image_sq
-#    alt: "liner removal"
-#    title: "Liner fully removed"
 
 ---
 
@@ -66,9 +44,11 @@ GitHub Copilot is a groundbreaking new tool that has taken the world of software
 
 [![github-copilot logo](/assets/images/github-copilot/github_logo-copilot-tease-th.webp){: .align-left}](https://github.com/features/copilot)
 
-Copilot is designed to make coding more efficient and less error-prone, by suggesting lines of code and filling in the blanks. Welcome to the future of programming!
+GitHub Copilot, the AI-powered code generation tool, has been making waves in the software development community since its beta release in June 2021. 
 
-In this blog post, we will give you a first introduction to GitHub Copilot and show you how to get started with this exciting new tool. Whether you are an experienced developer or just starting out, Copilot has the potential to transform the way you work and help you become a more productive and effective coder. So, let's dive in and explore this cutting-edge technology!
+With its ability to generate code based on natural language descriptions of tasks and context, Copilot promises to save developers time and effort in writing code. But does it live up to the hype? 
+
+In this blog post, we'll share our first impressions of Copilot and explore its potential benefits and limitations for developers. Whether you're a seasoned developer or just getting started in the world of code, read on to learn more about this exciting new tool.
 
 ### What is Github Copilot
 
@@ -161,7 +141,11 @@ This dependency can lead to a situation where developers are no longer able to i
 ### Conclusion
 
 
-Github Copilot is a powerful tool that can help developers write code more efficiently and effectively. However, it's important to recognize that over-reliance on AI-generated code can lead to a lack of understanding, creativity, and innovation in the field of software development. It's crucial that developers maintain a balance between using AI-generated code and writing code manually, and take steps to address the potential ethical, legal, and security issues that can arise. By doing so, developers can leverage the benefits of AI-powered tools while also ensuring that their code is fair, non-discriminatory, and secure. Ultimately, the responsible use of tools like Copilot can help to advance the field of software development and benefit society as a whole.
+Github Copilot is a powerful tool that can help developers write code more efficiently and effectively. However, it's important to recognize that over-reliance on AI-generated code can lead to a lack of understanding, creativity, and innovation in the field of software development. 
+
+It's crucial that developers maintain a balance between using AI-generated code and writing code manually, and take steps to address the potential ethical, legal, and security issues that can arise. By doing so, developers can leverage the benefits of AI-powered tools while also ensuring that their code is fair, non-discriminatory, and secure. 
+
+Ultimately, the responsible use of tools like Copilot can help to advance the field of software development and benefit society as a whole.
 
 
 

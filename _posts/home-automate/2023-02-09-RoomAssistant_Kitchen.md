@@ -55,7 +55,7 @@ gallery:
 
 Raspi model B used as a room controller and extension of the home assistant installation. Monitoring and controlling devices in the kitchen. Built from a Raspberry Pi Model B v1, some 5v relays and a few temperature sensors.
 
-I've installed Raspbian OS on the pi and have loaded [Room Assistant](https://www.room-assistant.io/) following [this guide](/homeautomation/roomassistant/RoomAssistant/) to handle the low level communication stuff back to my [Home Assistant](https://www.room-assistant.io/) server.
+I've installed Raspbian OS on the pi and have loaded [Room Assistant](https://www.room-assistant.io/) following [this guide](/blog/omeautomation/roomassistant/RoomAssistant/) to handle the low level communication stuff back to my [Home Assistant](https://www.room-assistant.io/) server.
 
 ### Kitchen Info and Use
 
@@ -65,7 +65,7 @@ This device lives on top of our pantry freestanding unit that lives in our kitch
 
 Responsible for occupancy and temperature readings for one of the most used rooms in the house. The occupancy sensor is tied to a LIFX light above the stove through a home assistant automation to trigger the lights on motion detection.
 
-Room temp is sent back to Home Assistant to be averaged into the whole house temperature used by the [Furnace Controller](homeautomation/roomassistant/RoomAssistant_Furnace/).
+Room temp is sent back to Home Assistant to be averaged into the whole house temperature used by the [Furnace Controller](/blog/omeautomation/roomassistant/RoomAssistant_Furnace/).
 
 ### Wiring
 

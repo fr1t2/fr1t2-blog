@@ -1,0 +1,14 @@
+---
+layout: splash
+entries_layout: grid
+
+---
+
+{{ content }}
+
+<!-- Grid view of latest posts -->
+<div class="grid__wrapper">
+  {% for post in site.posts limit:4 %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
