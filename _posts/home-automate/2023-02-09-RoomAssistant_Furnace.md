@@ -59,7 +59,7 @@ The furnace controller is one of my favorite and most used integrations so far.
 
 This one is located in my furnace connected to the interface to control the fan, heat and AC for the furnace through some 5v relays and a Raspi model B.
 
-On the Raspbian OS running on the pi I have installed [Room Assistant](https://www.room-assistant.io/) following [this guide](/homeautomation/roomassistant/RoomAssistant/) to handle the low level communication stuff back to my [Home Assistant](https://www.room-assistant.io/) server.
+On the Raspbian OS running on the pi I have installed [Room Assistant](https://www.room-assistant.io/) following [this guide](/blog/homeautomation/roomassistant/RoomAssistant/) to handle the low level communication stuff back to my [Home Assistant](https://www.room-assistant.io/) server.
 
 
 ### Wiring 

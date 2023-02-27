@@ -35,21 +35,21 @@ feature_row:
     alt: "sprinkler raspi wiring"
     title: "Sprinkler Control"
     excerpt: "Sprinkler zond controls and automation for an 8 zone system."
-    url: "/homeautomation/roomassistant/RoomAssistant_Furnace/"
+    url: "/blog/homeautomation/roomassistant/RoomAssistant_Sprinkler/"
     btn_label: "Read More"
     btn_class: "btn--inverse"
   - image_path: "../assets/images/roomassistant/FurnaceRaspi.png"
     alt: "furnace wiring"
     title: "Furnace Control"
     excerpt: "HVAC Controls for Heat and AC through Home Assistant"
-    url: "/homeautomation/roomassistant/RoomAssistant_Furnace/"
+    url: "/blog/homeautomation/roomassistant/RoomAssistant_Furnace/"
     btn_label: "Read More"
     btn_class: "btn--inverse"
   - image_path: "../assets/images/roomassistant/GarageRaspi.png"
     alt: "garage raspi wiring"
     title: "Garage Control"
     excerpt: "Garage Controls, including overhead door."
-    url: "/homeautomation/roomassistant/RoomAssistant_Furnace/"
+    url: "/blog/homeautomation/roomassistant/RoomAssistant_Garage/"
     btn_label: "Read More"
     btn_class: "btn--inverse"
 
@@ -116,11 +116,11 @@ these devices up in their respective blog pages.
 
 | Room | Device Use  | Config |
 | --- |--- | --- |
-| [Furnace](/homeautomation/roomassistant/RoomAssistant_Furnace/) | Relays connected through the furnace heat, cool and fan functions, temp/humid sensor in the return air path. Wired in parallel with wall thermostat for backup control of the furnace. Wall unit is switched off. | [Furnace Config File](/assets/file/room-assistant/furnace.local.yaml) |
-| [Kitchen](/homeautomation/roomassistant/RoomAssistant_Kitchen) | Temperature/humidity, motion, light control. Connected through Ubiquity Pico station as a client for remote network location | [Kitchen Config File](/assets/file/room-assistant/kitchen.local.yaml) |
-| [Sprinkler](/homeautomation/roomassistant/RoomAssistant_Sprinkler) | Sprinkler controls for 6 zones plus the common leg to sprinkler solenoids This is connected in parallel with the usual sprinkler controller allowing either to activate zones as needed. Also connected through a physical switch to activate individual zones. | [Sprinkler Config File](/assets/file/room-assistant/sprinkler.local.yaml) |
-| [Garage](/homeautomation/roomassistant/RoomAssistant_Garage) | Garage door control, temp sensor, overhead fan, door monitoring, motion sensor. | [Garage Config File](/assets/file/room-assistant/garage.local.yaml) |
-| [Office](/homeautomation/roomassistant/RoomAssistant_Office) | Test bed for room assistant installs. Motion sensor and relay for lights poorly implemented   | [Office Config File](/assets/file/room-assistant/office.local.yaml) |
+| [Furnace](/blog/homeautomation/roomassistant/RoomAssistant_Furnace/) | Relays connected through the furnace heat, cool and fan functions, temp/humid sensor in the return air path. Wired in parallel with wall thermostat for backup control of the furnace. Wall unit is switched off. | [Furnace Config File](/assets/file/room-assistant/furnace.local.yaml) |
+| [Kitchen](/blog/homeautomation/roomassistant/RoomAssistant_Kitchen) | Temperature/humidity, motion, light control. Connected through Ubiquity Pico station as a client for remote network location | [Kitchen Config File](/assets/file/room-assistant/kitchen.local.yaml) |
+| [Sprinkler](/blog/homeautomation/roomassistant/RoomAssistant_Sprinkler) | Sprinkler controls for 6 zones plus the common leg to sprinkler solenoids This is connected in parallel with the usual sprinkler controller allowing either to activate zones as needed. Also connected through a physical switch to activate individual zones. | [Sprinkler Config File](/assets/file/room-assistant/sprinkler.local.yaml) |
+| [Garage](/blog/homeautomation/roomassistant/RoomAssistant_Garage) | Garage door control, temp sensor, overhead fan, door monitoring, motion sensor. | [Garage Config File](/assets/file/room-assistant/garage.local.yaml) |
+| [Office](/blog/homeautomation/roomassistant/RoomAssistant_Office) | Test bed for room assistant installs. Motion sensor and relay for lights poorly implemented   | [Office Config File](/assets/file/room-assistant/office.local.yaml) |
 
 
 
